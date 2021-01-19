@@ -1,0 +1,7 @@
+Columns of CSV files (For more info, visit https://openflights.org/data.html)
+
+--Airports--
+1. Airport ID, 2. Name, 3. City, 4. Country, 5. IATA code, 6. ICAO code, 7. Latitude, 8. Longitude, 9. Altitude, 10. Timezone, 11. DST, 12. tz Timezone, 13. Type, 14. Source
+
+--Routes--
+1. Airline, 2.Airline ID (see Airlines CSV file), 3. Source airport, 4. Source airport ID (see Airports CSV file), 5. Destination airport, 6. Destination airport ID (see Airports CSV file), 7. Codeshare, 8. Stops, 9. Equipment
