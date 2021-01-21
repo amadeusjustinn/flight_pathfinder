@@ -4,16 +4,16 @@
 #include "graph.h"
 
 /**
- * @brief Reads airports.csv and inserts Airport objects using CSV data as vertices into graph
+ * @brief Reads airports.csv and inserts airports using CSV data as vertices into graph
  *
- * @param g Graph to be inserted Airport objects into
+ * @param g Graph to be inserted vertices (airports) into
  */
 void airportsReader(Graph &);
 
 /**
- * @brief Reads routes.csv and inserts "routes" (edges)
- * by connecting Airport objects using CSV data as vertices into graph
+ * @brief Reads routes.csv and inserts routes as edges into graph,
+ * connecting vertices (airports) using CSV data
  *
- * @param g Graph to be inserted edges into
+ * @param g Graph to be inserted edges (routes) into
  */
 void routesReader(Graph &);

@@ -6,11 +6,10 @@ using std::stringstream;
 
 void airportsReader(Graph &g)
 {
-    ifstream file("../datasets/airports.csv");
+    ifstream file("./datasets/airports.csv");
     if (file.is_open())
     {
         string line, token;
-        //vector<string> Vect;
         while (getline(file, line))
         {
             //removes quotation marks from each line
@@ -18,11 +17,12 @@ void airportsReader(Graph &g)
             g.insertVertex(line);
         }
     }
+    file.close();
 }
 
 void routesReader(Graph &g)
 {
-    ifstream file("../datasets/routes.csv");
+    ifstream file("./datasets/routes.csv");
     if (file.is_open())
     {
         string line, token1, token2;
@@ -32,9 +32,8 @@ void routesReader(Graph &g)
             vector<string> Vect1; /* 1. Airline, 2.Airline ID (see Airlines CSV file), 3. Source airport,
                                      4. Source airport ID, 5. Destination airport, 6. Destination airport ID,
                                      7. Codeshare, 8. Stops, 9. Equipment */
-            while (ss1.good())
+            while (getline(ss1, token1, ','))
             {
-                getline(ss1, token1, ',');
                 Vect1.push_back(token1);
             }
             Vertex source, dest;
@@ -75,5 +74,6 @@ void routesReader(Graph &g)
             //sets weight to distance between Airports (calculated using function from "coorddist.h")
             g.setEdgeWeight(source, dest, std::fabs(distance(slat, slong, dlat, dlong)));
         }
+        file.close();
     }
 }
