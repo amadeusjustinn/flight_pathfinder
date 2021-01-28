@@ -17,6 +17,7 @@ void DFS(Graph &);
  *
  * @param g Graph for DFS to be performed on
  * @param v Vertex to be explored
+ * @param visited Map indicating whether a specific vertex has been visited by algorithm
  */
 void DFS(Graph &, Vertex, std::map<Vertex, bool> &);
 
