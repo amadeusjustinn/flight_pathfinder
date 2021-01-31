@@ -1,12 +1,10 @@
 #include "csvreader.h"
 using std::getline;
-using std::ifstream;
 using std::stold;
-using std::stringstream;
 
 void airportsReader(Graph &g)
 {
-    ifstream file("./datasets/airports.csv");
+    std::ifstream file("./datasets/airports.csv");
     if (file.is_open())
     {
         string line, token;
@@ -22,13 +20,13 @@ void airportsReader(Graph &g)
 
 void routesReader(Graph &g)
 {
-    ifstream file("./datasets/routes.csv");
+    std::ifstream file("./datasets/routes.csv");
     if (file.is_open())
     {
         string line, token1, token2;
         while (getline(file, line))
         {
-            stringstream ss1(line);
+            std::stringstream ss1(line);
             vector<string> Vect1; /* 1. Airline, 2.Airline ID (see Airlines CSV file), 3. Source airport,
                                      4. Source airport ID, 5. Destination airport, 6. Destination airport ID,
                                      7. Codeshare, 8. Stops, 9. Equipment */
@@ -46,7 +44,7 @@ void routesReader(Graph &g)
                     //if both source and destination airports have been found,
                     break;
                 }
-                stringstream ss2(a);
+                std::stringstream ss2(a);
                 vector<string> Vect2; /* 1. Airport ID, 2. Name, 3. City, 4. Country, 5. IATA code,
                                          6. ICAO code, 7. Latitude, 8. Longitude, 9. Altitude, 10. Timezone,
                                          11. DST, 12. tz Timezone, 13. Type, 14. Source */

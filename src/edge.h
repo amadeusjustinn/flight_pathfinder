@@ -13,9 +13,6 @@ typedef string Vertex;
 
 /**
  * Represents an edge in a graph; used by the Graph class.
- *
- * @author Sean Massung
- * @date Spring 2012
  */
 class Edge
 {
